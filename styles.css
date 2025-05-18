@@ -1,0 +1,294 @@
+* {
+    padding: 0;
+    margin: 0;
+  }
+
+  .center {
+    padding-left: calc(50% - 601px);
+    padding-right: calc(50% - 601px);
+  }
+
+  body {
+    overflow-x: clip;
+  }
+
+  .header {
+    height: 710px;
+    /*width: 1440px;*/
+    background-color: rgb(225, 255, 143);
+    background-repeat: no-repeat;
+    background-image: url(img/Star\ 2.png), url(img/Star\ 3.png), url(img/big\ star.png),
+    url(img/Star\ 5.png), url(img/Star\ 4.png);
+    background-position: 63px 94px, 156px 69px, 854px -333.46px, 948px 538px, 1013px 568px;
+
+  }
+
+  .star:nth-child(1) {
+    position: absolute;
+    left: 854px;
+    top: -333.46px;
+    
+  }
+
+  .header__group {
+    padding-top: 196px;
+    padding-bottom: 246px;
+    /*padding-left: 120px;*/
+
+  }
+
+  .header__heading {
+    color: rgb(32, 32, 39);
+font-family: Montserrat;
+font-size: 64px;
+font-weight: 700;
+line-height: 78px;
+letter-spacing: 0px;
+}
+
+.header__text {
+    color: rgb(32, 32, 39);
+    font-family: Montserrat;
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 32px;
+    letter-spacing: 0px;  
+    gap: 24px;
+    padding-bottom: 48px;
+    padding-top: 24px;
+}
+
+.header__group-button {
+    width: 247px;
+    height: 66px; 
+    border-radius: 30px;
+    background-color: rgb(32, 32, 39); 
+    color: rgb(255, 255, 255);
+font-family: Montserrat;
+font-size: 24px;
+font-weight: 600;
+line-height: 141.69%;
+letter-spacing: 0%;
+text-align: center;
+}
+
+.header__group-button:hover {
+    background: #FFFFFF;
+    color: #000000;
+    cursor: pointer;  
+}
+
+.scrollbar {
+    width: 3220px;
+    height: 90px;
+    display: flex;
+    align-items: center;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(50px);
+    background: rgb(188, 236, 48);
+    flex-wrap: wrap;
+    max-height: 87px;   
+}
+
+.scrollbar__text {
+    font-family: "Montserrat";
+    color: rgb(32, 32, 39);
+    font-size: 30px;
+    font-weight: 700;
+    text-transform: uppercase;
+    padding-right: 51px;
+    padding-left: 51px;  
+}
+
+.main {
+    background-color: rgb(32, 32, 39);
+    background-repeat: no-repeat;
+    background-image: url(img/Star-main1.png), url(img/Star-main2.png), url(img/Star-main3.png);
+    background-position: 950px 85px, 25px 770px, 40px 822px;
+}
+
+.about-box {
+    color: #FFFFFF;
+}
+
+.about-box__title {
+font-family: Montserrat;
+font-size: 64px;
+font-weight: 700;
+line-height: 78px;
+padding-top: 94px;
+padding-bottom: 24px;
+}
+
+.about-box__text {
+    font-family: Montserrat;
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 32px;
+    padding-bottom: 72px;
+}
+
+.about {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    padding-bottom: 50px;
+}
+
+.about__top {
+    display: flex;
+        align-items: flex-start;
+        gap: 32px;
+        flex-wrap: wrap;  
+}
+
+.about__bottom {
+    display: flex;
+        flex-wrap: wrap;
+        align-items: flex-end;
+        gap: 32px;
+}   
+
+.game-card {
+    text-decoration: none;
+}
+
+.game-card__content {
+    width: 378px;
+    background-color: #FFFFFF;
+    border-radius: 30px;
+    display: flex;
+    flex-direction: column;
+}
+
+.game-card__description {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    padding: 32px;
+}
+
+.game-card__number {
+    width: 108px;
+    height: 36px;
+    background-color: rgb(247,247,247);
+    border-radius: 30px;
+    color: rgb(32, 32, 39);
+font-family: Montserrat;
+font-size: 16px;
+font-weight: 500;
+line-height: 110%;
+text-align: center;
+padding-top: 8px;
+box-sizing: border-box;
+}
+
+.game-card__title {
+    color: rgb(32, 32, 39);
+    font-family: Montserrat;
+    font-size: 32px;
+    font-weight: 700;
+    line-height: 39px;
+    padding-bottom: 4px;
+   
+}
+
+@media (min-width: 1024px) {
+    .header__text-mobile {
+        display: none;
+    }
+
+    .scrollbar__star-mobile {
+        display: none;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+    .header__text-mobile {
+        display: none;
+    }
+
+    .scrollbar__star-mobile {
+        display: none;
+    }  
+}
+
+@media (max-width: 767px) {
+
+    .center {
+        padding-left: 16px;
+        padding-right: 16px;
+      }
+
+      .header {
+        height: 700px;
+        background-image: url(img/Star\ 2.png), url(img/Star\ 3.png), url(img/big\ star.png),
+        url(img/Star\ 5.png), url(img/Star\ 4.png), url(img/Vector.png);
+        background-position: 63px 94px, 156px 69px, 854px -333.46px, 272px 557px, 290px 580px, 220px -90px;
+      }
+
+    .header__group {
+        padding-top: 147px;
+        text-align: center;
+    }
+
+    .header__heading {
+        font-size: 40px;
+        line-height: 49px;   
+    }
+
+    .header__text {
+        display: none;
+    }
+    
+    .header__text-mobile {
+        font-size: 16px;
+        line-height: 20px;
+        color: rgb(32, 32, 39);
+        font-family: Montserrat;
+        font-weight: 400;
+        letter-spacing: 0px;  
+        gap: 24px;
+        padding-bottom: 36px;
+        padding-top: 24px;
+    }
+
+    .header__group-button {
+        width: 285px;
+        height: 55px;
+        font-size: 16px;
+    }
+
+    .scrollbar {
+        width: 1926px;
+        height: 51.34px;
+       
+
+    }
+
+    .scrollbar__text {
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 110%;
+    letter-spacing: 4%;  
+     padding-right: 27.4px;
+        padding-left: 27.4px;  
+    }
+
+    .scrollbar__star {
+        display: none;
+    }
+
+    .about-box {
+        display: none;
+    }
+
+    .header__group-button:hover {
+    background: #000;
+    color: #FFFFFF;
+    cursor: pointer;  
+}
+
+}
+
+
