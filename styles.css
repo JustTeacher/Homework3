@@ -103,8 +103,8 @@ text-align: center;
 .main {
     background-color: rgb(32, 32, 39);
     background-repeat: no-repeat;
-    background-image: url(img/Star-main1.png), url(img/Star-main2.png), url(img/Star-main3.png);
-    background-position: 950px 85px, 25px 770px, 40px 822px;
+    background-image: url(img/Star-main1.png), url(img/Star-main2.png), url(img/Star-main3.png), url(img/Star\ 7.png), url(img/Star\ 6.png), url(img/Star\ 8.png), url(img/Star\ 10.png);
+    background-position: 950px 85px, 25px 770px, 40px 822px, 1277px 1563px, 1320px 1596px, 1319px 4836px, 1249px 4884px; 
 }
 
 .about-box {
@@ -149,6 +149,10 @@ padding-bottom: 24px;
         gap: 32px;
 }   
 
+.game-box {
+    padding-bottom: 144px;
+}
+
 .game-card {
     text-decoration: none;
 }
@@ -191,6 +195,91 @@ box-sizing: border-box;
     line-height: 39px;
     padding-bottom: 4px;
    
+}
+
+.game-box__title {
+    color: rgb(255, 255, 255);
+font-family: Montserrat;
+font-size: 64px;
+font-weight: 700;
+line-height: 78px;
+padding-top: 46px;
+padding-bottom: 40px;
+}
+
+.games {
+ display: flex;
+    flex-direction: column;
+    gap: 32px;    
+}
+
+.mini-game-card {
+ width: 1200px;
+ background-color: #FFFFFF;
+ display: flex;
+ justify-content: space-between;
+ border-radius: 30px;
+}
+
+.mini-game-card__description {
+    display: flex;
+    flex-direction: column;
+    padding: 48px;
+    width: 504px;
+}
+
+.mini-game-card__title {
+    color: rgb(32, 32, 39);
+font-family: Montserrat;
+font-size: 48px;
+font-weight: 700;
+line-height: 59px;
+}
+
+.mini-game-card__text {
+  color: rgb(32, 32, 39);
+font-family: Montserrat;
+font-size: 24px;
+font-weight: 400;
+line-height: 32px; 
+padding-top: 24px;
+padding-bottom: 36px; 
+}
+
+.mini-game-card__button {
+  width: 247px;
+    height: 66px; 
+    border-radius: 30px;
+    background-color: rgb(32, 32, 39); 
+    color: rgb(255, 255, 255);
+font-family: Montserrat;
+font-size: 24px;
+font-weight: 600;
+line-height: 141.69%;
+letter-spacing: 0%;
+text-align: center;  
+}
+
+.mini-game-card__button:hover {
+     background: #FFFFFF;
+    color: #000000;
+    cursor: pointer;  
+}
+
+.footer {
+    background-color: rgb(189, 237, 53);
+}
+
+.footer__text {
+    text-align: center;
+    color: rgb(0, 0, 0);
+font-family: Montserrat;
+font-size: 24px;
+font-weight: 600;
+line-height: 29px;
+padding-top: 61px;
+padding-bottom: 60px;
+
 }
 
 @media (min-width: 1024px) {
