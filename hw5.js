@@ -40,8 +40,6 @@ age();
 
 //задание 5
 function calc(a, b) {
-  isNaN(a);
-  isNaN(b);
   if (isNaN(a) || isNaN(b)) {
     return 'Одно или оба значения не являются числом';
   } else {
