@@ -112,7 +112,29 @@
                 <div class="mini-game-card__description">
                     <h3 class="mini-game-card__title">Угадай число</h3>
                     <p class="mini-game-card__text">Попробуй угадать случайное<br> число от 1 до 100.</p>
-                    <a href="#"><button class="mini-game-card__button">Играть!</button></a>
+                    <a onclick="startGame1(event);"><button class="mini-game-card__button">Играть!</button></a>
+                    <script>
+                        function startGame1(event) {
+    let randomNunber = Math.floor(Math.random() * 100) + 1;
+    while(true) {
+        let userNumber = prompt('Попробуй угадать число от 1 до 100:');
+        if (userNumber === null) { 
+            alert("Игра завершена.");
+            break;
+        }
+        userNumber = Number(userNumber);
+        if (userNumber === randomNunber) {
+            alert("Поздравляю, число угадано");
+            break;
+        } else if(userNumber < randomNunber) {
+            alert("Загаданное число больше! Попробуй ещё раз");
+        } else {
+            alert("Загаданное число меньше! Попробуй ещё раз.");
+        }
+    }
+}
+
+                    </script>  
                 </div>
                 <img class="mini-game-card__img" src="img/1game.png" alt="логотип игры">
               </div>
