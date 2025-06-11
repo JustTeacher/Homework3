@@ -144,7 +144,58 @@
                 <div class="mini-game-card__description">
                     <h3 class="mini-game-card__title">Простая арифметика</h3>
                     <p class="mini-game-card__text">Попробуй решить простые арифметические задачи.</p>
-                    <a href="#"><button class="mini-game-card__button">Играть!</button></a>
+                    <a onclick="startGame2(event)"><button class="mini-game-card__button">Играть!</button></a>
+                    <script>function startGame2(event) {
+    function getRandomInt(min, max) {
+        min = Math.ceil(min);
+        max = Math.floor(max);
+        return Math.floor(Math.random() * (max - min + 1) + min);
+    }
+
+    const randomNumber1 = getRandomInt(0, 50);
+    const randomNumber2 = getRandomInt(0, 50);
+    const signs = ['+', '-', '*', '/'];
+    const randomIndex = Math.floor(Math.random() * signs.length);
+    let randomSigns = signs[randomIndex];
+
+    function solveTask() {
+        let result;
+        if (randomSigns === '+') {
+            result = randomNumber1 + randomNumber2;
+        } else if (randomSigns === '-') {
+            result = randomNumber1 - randomNumber2;
+        } else if (randomSigns === '*') {
+            result = randomNumber1 * randomNumber2;
+        } else if (randomSigns === '/') {
+            result = randomNumber1 / randomNumber2;
+        }
+        return result;
+    }
+
+    function askUserAnswer() {
+        const task = `${randomNumber1} ${randomSigns} ${randomNumber2}`;
+        console.log(`${task}`);
+        return prompt(`Введите ответ на данный пример: ${task}`);
+    }
+
+    function checkAnswer(userAnswer) {
+        const correctAnswer = solveTask();
+        // Преобразуем ответ пользователя в число
+        const userAnswerAsNumber = parseFloat(userAnswer);
+        if (userAnswerAsNumber === correctAnswer) {
+            alert('Молодец! Верный ответ!');
+        } else {
+            alert(`Увы! Правильный ответ: ${correctAnswer}`);
+        }
+    }
+
+    (async function main() {
+        const userAnswer = askUserAnswer();
+        checkAnswer(userAnswer);
+    })();
+}
+
+</script>
                 </div>
               </div>
               <div id="game3" class="mini-game-card">
