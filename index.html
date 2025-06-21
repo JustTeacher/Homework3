@@ -119,15 +119,17 @@
     let randomNunber = Math.floor(Math.random() * 100) + 1;
     while(true) {
         let userNumber = prompt('Попробуй угадать число от 1 до 100:');
+        if (userNumber === null) { 
+            alert('Игра остановлена.');
+            break;
+        }
         userNumber = Number(userNumber);
         if (userNumber === randomNunber) {
             alert("Поздравляю, число угадано");
             break;
-        }
-        else if(userNumber < randomNunber) {
+        } else if(userNumber < randomNunber) {
             alert("Загаданное число больше! Попробуй ещё раз");
-        }
-        else {
+        } else {
             alert("Загаданное число меньше! Попробуй ещё раз.")
         }
     }
@@ -212,7 +214,7 @@
                     const reversedText = inputText.split('').reverse().join('');
                     alert('Перевернутый текст: ' + reversedText);
                 } else {
-                    alert('Вы не ввели текст.');
+                    alert('Игра остановлена.');
                 }
             }
         </script>
