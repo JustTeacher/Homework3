@@ -235,49 +235,54 @@
                     <p class="mini-game-card__text">Отвечай на вопросы викторины с вариантами ответов.</p>
                     <a onclick="startQuiz(event)"><button class="mini-game-card__button">Играть!</button></a>
                     <script>
-        const quiz = [
-            {
-                question: "Какой цвет небо?",
-                options: ["1. Красный", "2. Синий", "3. Зеленый"],
-                correctAnswer: 2 
-            },
-            {
-                question: "Сколько дней в неделе?",
-                options: ["1. Шесть", "2. Семь", "3. Восемь"],
-                correctAnswer: 2
-            },
-            {
-                question: "Сколько у человека пальцев на одной руке?",
-                options: ["1. Четыре", "2. Пять", "3. Шесть"],
-                correctAnswer: 2
-            }
-        ];
-
-        function startQuiz() {
-            let correctCount = 0; 
-
-            for (let i = 0; i < quiz.length; i++) {
-                const question = quiz[i];
-                let userAnswer;
-
-                let questionText = `${question.question}\n`;
-                question.options.forEach(option => {
-                    questionText += `${option}\n`;
-                });
-
-                userAnswer = prompt(questionText, "");
-
-                if (userAnswer && parseInt(userAnswer) === question.correctAnswer) {
-                    correctCount++;
-                }
-            }
-
-            alert(`Вы правильно ответили на ${correctCount} из ${quiz.length} вопросов.`);
+    const quiz = [
+        {
+            question: "Какой цвет небо?",
+            options: ["1. Красный", "2. Синий", "3. Зеленый"],
+            correctAnswer: 2
+        },
+        {
+            question: "Сколько дней в неделе?",
+            options: ["1. Шесть", "2. Семь", "3. Восемь"],
+            correctAnswer: 2
+        },
+        {
+            question: "Сколько у человека пальцев на одной руке?",
+            options: ["1. Четыре", "2. Пять", "3. Шесть"],
+            correctAnswer: 2
         }
-    </script>
-                </div>
-                <img class="mini-game-card__img" src="img/5game.png" alt="логотип игры">
-              </div>
+    ];
+
+    function startQuiz() {
+        let correctCount = 0;
+
+        for (let i = 0; i < quiz.length; i++) {
+            const question = quiz[i];
+            let userAnswer;
+
+            let questionText = `${question.question}\n`;
+            question.options.forEach(option => {
+                questionText += `${option}\n`;
+            });
+
+            userAnswer = prompt(questionText, "");
+
+            if (userAnswer === null) { 
+                alert('Игра остановлена.');
+                return;
+            }
+
+            if (userAnswer && parseInt(userAnswer) === question.correctAnswer) {
+                correctCount++;
+            }
+        }
+
+        alert(`Вы правильно ответили на ${correctCount} из ${quiz.length} вопросов.`);
+    }
+</script>
+ </div>
+            <img class="mini-game-card__img" src="img/5game.png" alt="логотип игры">
+          </div>
               <div id="game6" class="mini-game-card">
                 <img class="mini-game-card__img-mobile" src="img/game6.png" alt="логотип игры">
                 <img class="mini-game-card__img" src="img/6game.png" alt="логотип игры">
