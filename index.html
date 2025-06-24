@@ -227,7 +227,36 @@
                 <div class="mini-game-card__description">
                     <h3 class="mini-game-card__title">Камень,<br> ножницы, <br>бумага</h3>
                     <p class="mini-game-card__text">Сыграй в популярную игру<br> против компьютера.</p>
-                    <a href="#"><button class="mini-game-card__button">Играть!</button></a>
+                    <a onclick="startRockPaperScissors(event)"><button class="mini-game-card__button">Играть!</button></a>
+                    <script>
+                        function startRockPaperScissors() {
+    const userChoice = prompt('Выберите камень, ножницы или бумагу:').toLowerCase();
+
+    if (userChoice === null) { 
+        alert('Игра остановлена.');
+        return;
+    }
+
+    const choices = ["камень", "ножницы", "бумага"];
+    const computerChoice = choices[Math.floor(Math.random() * choices.length)];
+
+    if (!choices.includes(userChoice)) {
+        alert('Ошибка: пожалуйста, введите "камень", "ножницы" или "бумага".');
+        return;
+    }
+
+    if (userChoice === computerChoice) {
+        alert(`Ничья! Вы оба выбрали ${userChoice}.`);
+    } else if ((userChoice === "камень" && computerChoice === "ножницы") ||
+               (userChoice === "ножницы" && computerChoice === "бумага") ||
+               (userChoice === "бумага" && computerChoice === "камень")) {
+        alert(`Вы победили! ${userChoice} побеждает ${computerChoice}.`);
+    } else {
+        alert(`Вы проиграли. ${computerChoice} побеждает ${userChoice}.`);
+    }
+}
+
+                    </script>
                 </div>
               </div>
               <div id="game5" class="mini-game-card">
