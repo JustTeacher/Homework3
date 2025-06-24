@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Задание 1</h2>
+    <h1>Это заголовок, который можно скрыть и показать</h1>
+    <button id="hideShowButton">Скрыть</button>
+
+    <script>
+        const header = document.querySelector('h1');
+        const button1 = document.querySelector('#hideShowButton');
+
+        button1.addEventListener('click', function() {
+            if (header.style.display === 'none') {
+                header.style.display = 'block';
+                button1.textContent = 'Скрыть';
+            } else {
+                header.style.display = 'none';
+                button1.textContent = 'Показать';
+            }
+        });
+    </script>
+
+    <h2>Задание 2</h2>
+    <p id="changeColor">Это абзац, цвет текста которого можно изменить.</p>
+    <button id="changeColorButton">Изменить цвет</button>
+
+    <script>
+        const paragraph = document.querySelector('#changeColor');
+        const button2 = document.querySelector('#changeColorButton');
+
+        button2.addEventListener('click', function() {
+            paragraph.style.color = 'blue';
+        });
+    </script>
+
+    <h2>Задание 3</h2>
+    <h1 id="changeText">Это заголовок, текст которого можно изменить</h1>
+    <button id="changeTextButton">Изменить текст</button>
+
+    <script>
+        const header1 = document.querySelector('#changeText');
+        const button3 = document.querySelector('#changeTextButton');
+
+        button3.addEventListener('click', function() {
+            header1.textContent = 'Привет, мир!';
+        });
+    </script>
+
+     <h2>Задание 4</h2>
+     <p class="description">Оригинальный текст 1</p>
+    <p class="description">Оригинальный текст 2</p>
+    <p class="description">Оригинальный текст 3</p>
+
+    <script>
+        const descriptions = document.querySelectorAll('.description');
+
+        descriptions.forEach(function(description) {
+            description.textContent = 'Измененный текст';
+        });
+    </script>
+
+    <h2>Задание 5</h2>
+     <p class="description1">Оригинальный текст 1</p>
+    <p>Оригинальный текст без класса</p>
+    <p class="description1">Оригинальный текст 2</p>
+    <p class="other">Оригинальный текст с другим классом</p>
+    <p class="description1">Оригинальный текст 3</p>
+
+    <script>
+        const description = document.querySelectorAll('.description1');
+
+        description.forEach(function(description1) {
+            description1.textContent = 'Новый текст';
+        });
+    </script>
+
+    <h2>Задание 6</h2>
+    <button id="addElementButton">Добавить элемент</button>
+
+    <script>
+        const button = document.querySelector('#addElementButton');
+
+        button.addEventListener('click', function() {
+            const newParagraph = document.createElement('p');
+            newParagraph.textContent = 'Новый абзац';
+
+            document.body.appendChild(newParagraph);
+        });
+    </script>
+
+    <h2>Задание 7</h2>
+    <p>Оригинальный текст без класса</p>
+    <p class="description2">Оригинальный текст 1</p>
+    <p>Оригинальный текст без класса</p>
+    <p class="description2">Оригинальный текст 2</p>
+    <p class="description2">Оригинальный текст 3</p>
+
+    <button id="deleteItem">Удалить элемент</button>
+
+    <script>
+        const button7 = document.querySelector('#deleteItem');
+        const firstDescriptionParagraph = document.querySelector('.description2');
+
+        button7.addEventListener('click', function() {
+            if (firstDescriptionParagraph) {
+                firstDescriptionParagraph.remove();
+            }
+        });
+    </script>
+</body>
+</html>
