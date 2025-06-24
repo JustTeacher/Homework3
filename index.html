@@ -119,7 +119,7 @@
     while(true) {
         let userNumber = prompt('Попробуй угадать число от 1 до 100:');
         if (userNumber === null) { 
-            alert("Игра завершена.");
+            alert('Игра остановлена.');
             break;
         }
         userNumber = Number(userNumber);
@@ -145,68 +145,82 @@
                     <h3 class="mini-game-card__title">Простая арифметика</h3>
                     <p class="mini-game-card__text">Попробуй решить простые арифметические задачи.</p>
                     <a onclick="startGame2(event)"><button class="mini-game-card__button">Играть!</button></a>
-                    <script>function startGame2(event) {
-    function getRandomInt(min, max) {
-        min = Math.ceil(min);
-        max = Math.floor(max);
-        return Math.floor(Math.random() * (max - min + 1) + min);
-    }
-
-    const randomNumber1 = getRandomInt(0, 50);
-    const randomNumber2 = getRandomInt(0, 50);
-    const signs = ['+', '-', '*', '/'];
-    const randomIndex = Math.floor(Math.random() * signs.length);
-    let randomSigns = signs[randomIndex];
-
-    function solveTask() {
-        let result;
-        if (randomSigns === '+') {
-            result = randomNumber1 + randomNumber2;
-        } else if (randomSigns === '-') {
-            result = randomNumber1 - randomNumber2;
-        } else if (randomSigns === '*') {
-            result = randomNumber1 * randomNumber2;
-        } else if (randomSigns === '/') {
-            result = randomNumber1 / randomNumber2;
+                    <script>
+    function startGame2(event) {
+        function getRandomInt(min, max) {
+            min = Math.ceil(min);
+            max = Math.floor(max);
+            return Math.floor(Math.random() * (max - min + 1) + min);
         }
-        return result;
-    }
 
-    function askUserAnswer() {
-        const task = `${randomNumber1} ${randomSigns} ${randomNumber2}`;
-        console.log(`${task}`);
-        return prompt(`Введите ответ на данный пример: ${task}`);
-    }
+        const randomNumber1 = getRandomInt(0, 50);
+        const randomNumber2 = getRandomInt(0, 50);
+        const signs = ['+', '-', '*', '/'];
+        const randomIndex = Math.floor(Math.random() * signs.length);
+        let randomSigns = signs[randomIndex];
 
-    function checkAnswer(userAnswer) {
-        const correctAnswer = solveTask();
-        // Преобразуем ответ пользователя в число
-        const userAnswerAsNumber = parseFloat(userAnswer);
-        if (userAnswerAsNumber === correctAnswer) {
-            alert('Молодец! Верный ответ!');
-        } else {
-            alert(`Увы! Правильный ответ: ${correctAnswer}`);
+        function solveTask() {
+            let result;
+            if (randomSigns === '+') {
+                result = randomNumber1 + randomNumber2;
+            } else if (randomSigns === '-') {
+                result = randomNumber1 - randomNumber2;
+            } else if (randomSigns === '*') {
+                result = randomNumber1 * randomNumber2;
+            } else if (randomSigns === '/') {
+                result = randomNumber1 / randomNumber2;
+            }
+            return result;
         }
+
+        function askUserAnswer() {
+            const task = `${randomNumber1} ${randomSigns} ${randomNumber2}`;
+            console.log(`${task}`);
+            return prompt(`Введите ответ на данный пример: ${task}`);
+        }
+
+        function checkAnswer(userAnswer) {
+            if (userAnswer === null) { 
+                alert('Игра остановлена.');
+                return;
+            }
+            const correctAnswer = solveTask();
+            const userAnswerAsNumber = parseFloat(userAnswer);
+            if (userAnswerAsNumber === correctAnswer) {
+                alert('Молодец! Верный ответ!');
+            } else {
+                alert(`Увы! Правильный ответ: ${correctAnswer}`);
+            }
+        }
+
+        (async function main() {
+            const userAnswer = askUserAnswer();
+            checkAnswer(userAnswer);
+        })();
     }
-
-    (async function main() {
-        const userAnswer = askUserAnswer();
-        checkAnswer(userAnswer);
-    })();
-}
-
 </script>
                 </div>
               </div>
-              <div id="game3" class="mini-game-card">
-                <img class="mini-game-card__img-mobile" src="img/game3.png" alt="логотип игры">
-                <div class="mini-game-card__description">
-                    <h3 class="mini-game-card__title">Переверни текст</h3>
-                    <p class="mini-game-card__text">Попробуй ввести текст, который<br> будет перевернут.</p>
-                    <a href="#"><button class="mini-game-card__button">Играть!</button></a>
-                </div>
-                <img class="mini-game-card__img" src="img/3game.png" alt="логотип игры">
-              </div>
+             <div id="game3" class="mini-game-card">
+    <img class="mini-game-card__img-mobile" src="img/game3.png" alt="логотип игры">
+    <div class="mini-game-card__description">
+        <h3 class="mini-game-card__title">Переверни текст</h3>
+        <p class="mini-game-card__text">Попробуй ввести текст, который<br> будет перевернут.</p>
+        <button class="mini-game-card__button" onclick="reverseText()">Играть!</button>
+        <script>
+            function reverseText() {
+                const inputText = prompt('Введите текст:');
+                if (inputText !== null) {
+                    const reversedText = inputText.split('').reverse().join('');
+                    alert('Перевернутый текст: ' + reversedText);
+                } else {
+                    alert('Игра остановлена.');
+                }
+            }
+        </script>
+    </div>
+    <img class="mini-game-card__img" src="img/3game.png" alt="логотип игры">
+</div>
               <div id="game4" class="mini-game-card">
                 <img class="mini-game-card__img-mobile" src="img/game4.png" alt="логотип игры">
                 <img class="mini-game-card__img" src="img/4game.png" alt="логотип игры">
@@ -221,10 +235,56 @@
                 <div class="mini-game-card__description">
                     <h3 class="mini-game-card__title">Простая викторина</h3>
                     <p class="mini-game-card__text">Отвечай на вопросы викторины с вариантами ответов.</p>
-                    <a href="#"><button class="mini-game-card__button">Играть!</button></a>
-                </div>
-                <img class="mini-game-card__img" src="img/5game.png" alt="логотип игры">
-              </div>
+                    <a onclick="startQuiz(event)"><button class="mini-game-card__button">Играть!</button></a>
+                    <script>
+    const quiz = [
+        {
+            question: "Какой цвет небо?",
+            options: ["1. Красный", "2. Синий", "3. Зеленый"],
+            correctAnswer: 2
+        },
+        {
+            question: "Сколько дней в неделе?",
+            options: ["1. Шесть", "2. Семь", "3. Восемь"],
+            correctAnswer: 2
+        },
+        {
+            question: "Сколько у человека пальцев на одной руке?",
+            options: ["1. Четыре", "2. Пять", "3. Шесть"],
+            correctAnswer: 2
+        }
+    ];
+
+    function startQuiz() {
+        let correctCount = 0;
+
+        for (let i = 0; i < quiz.length; i++) {
+            const question = quiz[i];
+            let userAnswer;
+
+            let questionText = `${question.question}\n`;
+            question.options.forEach(option => {
+                questionText += `${option}\n`;
+            });
+
+            userAnswer = prompt(questionText, "");
+
+            if (userAnswer === null) { 
+                alert('Игра остановлена.');
+                return;
+            }
+
+            if (userAnswer && parseInt(userAnswer) === question.correctAnswer) {
+                correctCount++;
+            }
+        }
+
+        alert(`Вы правильно ответили на ${correctCount} из ${quiz.length} вопросов.`);
+    }
+</script>
+ </div>
+            <img class="mini-game-card__img" src="img/5game.png" alt="логотип игры">
+          </div>
               <div id="game6" class="mini-game-card">
                 <img class="mini-game-card__img-mobile" src="img/game6.png" alt="логотип игры">
                 <img class="mini-game-card__img" src="img/6game.png" alt="логотип игры">
