@@ -320,7 +320,16 @@
                 <div class="mini-game-card__description">
                     <h3 class="mini-game-card__title">Генератор случайных<br> цветов</h3>
                     <p class="mini-game-card__text">Игра, в которой при клике на кнопку фон страницы меняется на случайный.</p>
-                    <a href="#"><button class="mini-game-card__button">Играть!</button></a>
+                   <a><button id="button" class="mini-game-card__button">Играть!</button></a>
+
+<script>
+    const button = document.querySelector('#button');
+
+    button.addEventListener('click', function() {
+        const randomColor = '#' + Math.floor(Math.random() * 16777215).toString(16);
+        button.style.backgroundColor = randomColor;
+    });
+</script>
                 </div>
               </div>  
             </div>
