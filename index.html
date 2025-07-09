@@ -15,28 +15,49 @@
         <p class="header__text">Тебе предстоит пройти несколько увлекательных игр. <br> Если готов, нажимай <b>«Поехали!»</b> и <b>приступай</b>.</p>
         <p class="header__text-mobile">Тебе предстоит пройти несколько увлекательных игр. Если готов, <br>нажимай <b>«Поехали!»</b> и <b>приступай</b>.</p>
         <a href="#about"><button class="header__group-button">Поехали!</button></a>
+        <a href="#game-box"><button class="header__group-button-mobile">Поехали!</button></a>
     </div>
     </header>
-   <!-- <section class="scrollbar">
+   <section class="scrollbar">
+            <div class="scrollbar__track">
+                <div class="scrollbar__item">
         <div class="scrollbar__text">Викторина</div>
         <img class="scrollbar__star" src="img/Star.png" alt="звезда">
         <img class="scrollbar__star-mobile" src="img/star-mobile.png" alt="звезда">
-        <div class="scrollbar__text">угадай число</div>
+    </div>
+        <div class="scrollbar__item">
+            <div class="scrollbar__text">Угадай число</div>
         <img class="scrollbar__star" src="img/Star.png" alt="звезда">
         <img class="scrollbar__star-mobile" src="img/star-mobile.png" alt="звезда">
+        </div>
+        <div class="scrollbar__item">
         <div class="scrollbar__text">Переверни текст</div>
         <img class="scrollbar__star" src="img/Star.png" alt="звезда">
         <img class="scrollbar__star-mobile" src="img/star-mobile.png" alt="звезда">
+    </div>
+        <div class="scrollbar__item">
         <div class="scrollbar__text">Простая арифметика</div>
         <img class="scrollbar__star" src="img/Star.png" alt="звезда">
         <img class="scrollbar__star-mobile" src="img/star-mobile.png" alt="звезда">
+    </div>
+        <div class="scrollbar__item">
         <div class="scrollbar__text">Камень, ножницы, бумага</div>
         <img class="scrollbar__star" src="img/Star.png" alt="звезда">
         <img class="scrollbar__star-mobile" src="img/star-mobile.png" alt="звезда">
+    </div>
+        <div class="scrollbar__item">
         <div class="scrollbar__text">Генератор случайных цветов</div>
         <img class="scrollbar__star" src="img/Star.png" alt="звезда"> 
-        <img class="scrollbar__star-mobile" src="img/star-mobile.png" alt="звезда">   
-    </section>-->
+        <img class="scrollbar__star-mobile" src="img/star-mobile.png" alt="звезда">  
+        </div>   
+            </div>
+    </section>
+    <script>
+   document.addEventListener('DOMContentLoaded', function () {
+  const track = document.querySelector('.scrollbar__track');
+  track.innerHTML += track.innerHTML;
+});
+</script>
     <main class="main center">
         <section class="about-box" id="about">
             <h2 class="about-box__title">Об играх</h2>
@@ -104,7 +125,7 @@
         </div>
             </div>    
         </section>
-        <section class="game-box">
+        <section class="game-box center" id="game-box">
             <h2 class="game-box__title">Мини-игры</h2>
             <div class="games">
               <div id="game1" class="mini-game-card">
@@ -320,7 +341,16 @@
                 <div class="mini-game-card__description">
                     <h3 class="mini-game-card__title">Генератор случайных<br> цветов</h3>
                     <p class="mini-game-card__text">Игра, в которой при клике на кнопку фон страницы меняется на случайный.</p>
-                    <a href="#"><button class="mini-game-card__button">Играть!</button></a>
+                   <a><button id="button" class="mini-game-card__button">Играть!</button></a>
+
+<script>
+    const button = document.querySelector('#button');
+
+    button.addEventListener('click', function() {
+        const randomColor = '#' + Math.floor(Math.random() * 16777215).toString(16);
+        button.style.backgroundColor = randomColor;
+    });
+</script>
                 </div>
               </div>  
             </div>
