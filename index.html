@@ -19,13 +19,14 @@
     </div>
     </header>
    <section class="scrollbar">
-            <div class="scrollbar__item">
+            <div class="scrollbar__track">
+                <div class="scrollbar__item">
         <div class="scrollbar__text">Викторина</div>
         <img class="scrollbar__star" src="img/Star.png" alt="звезда">
         <img class="scrollbar__star-mobile" src="img/star-mobile.png" alt="звезда">
     </div>
         <div class="scrollbar__item">
-            <div class="scrollbar__text">угадай число</div>
+            <div class="scrollbar__text">Угадай число</div>
         <img class="scrollbar__star" src="img/Star.png" alt="звезда">
         <img class="scrollbar__star-mobile" src="img/star-mobile.png" alt="звезда">
         </div>
@@ -49,18 +50,13 @@
         <img class="scrollbar__star" src="img/Star.png" alt="звезда"> 
         <img class="scrollbar__star-mobile" src="img/star-mobile.png" alt="звезда">  
         </div>   
+            </div>
     </section>
     <script>
-   document.addEventListener('DOMContentLoaded', function() {
-    const scrollbar = document.querySelector('.scrollbar');
-    const originalItems = scrollbar.querySelectorAll('.scrollbar__item');
-
-    for (let i = 0; i < originalItems.length; i++) {
-        const clone = originalItems[i].cloneNode(true);
-        scrollbar.appendChild(clone);
-    }
+   document.addEventListener('DOMContentLoaded', function () {
+  const track = document.querySelector('.scrollbar__track');
+  track.innerHTML += track.innerHTML;
 });
-
 </script>
     <main class="main center">
         <section class="about-box" id="about">

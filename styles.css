@@ -93,14 +93,20 @@ text-align: center;
     background: rgb(188, 236, 48);
     /*flex-wrap: wrap;*/
     max-height: 87px;  
-    white-space: nowrap;
-    animation: scroll 10s linear infinite; 
-    animation-direction: normal;
+    overflow: hidden;
+    position: relative;
+}
+
+.scrollbar__track {
+    display: flex;
+  align-items: center;
+  white-space: nowrap;
+  animation: scroll 18s linear infinite;
 }
 
 .scrollbar__item {
-    display: inline-block;
-    
+  display: inline-flex;
+  align-items: center;
 }
 
 .scrollbar__text {
@@ -120,12 +126,12 @@ text-align: center;
 }
 
 @keyframes scroll {
-   from {
-    transform: translateX(0%);
-   }
-   to {
-    transform: translateX(-100%);
-   }
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
 }
 
 
